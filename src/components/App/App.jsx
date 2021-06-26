@@ -1,16 +1,42 @@
+import {Route, Switch} from "react-router-dom";
+
 import './App.css';
 import Header from '../Header/Header';
-import Home from '../Home/Home'
+import HomePage from '../Home/Home';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Home />
-      <Footer />
-    </div>
-  );
-}
+
+import React from 'react';
+
+const App = () => {
+    return (
+        <div className="App">
+            <Header />
+            <main>
+                <switch>
+                <Route exact path="/">
+                    <HomePage />
+                </Route>
+
+                <Route exact path="/about">
+                    <About />
+                </Route>
+
+                <Route exact path="/contact">
+                    <Contact />
+                </Route>
+
+                <Route>
+                    {/* Faire 404 */}
+                </Route>
+                </switch>
+
+            </main>
+            <Footer />
+        </div>
+    );
+};
 
 export default App;
