@@ -1,10 +1,11 @@
+import Map from '../Map/Map';
 import React from 'react';
 import './style.css';
 
 const Home = () => {
     return (
         <div className="home">
-            Home
+            <Map />
         </div>
     );
 };
