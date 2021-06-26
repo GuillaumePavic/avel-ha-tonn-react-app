@@ -15,7 +15,7 @@ const App = () => {
         <div className="App">
             <Header />
             <main>
-                <switch>
+                <Switch>
                 <Route exact path="/">
                     <HomePage />
                 </Route>
@@ -31,7 +31,7 @@ const App = () => {
                 <Route>
                     {/* Faire 404 */}
                 </Route>
-                </switch>
+                </Switch>
 
             </main>
             <Footer />
