@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const Displayer = () => {
+const Displayer = ({ marker }) => {
     return (
         <div className="displayer">
-            I am the displayer
+            <h2>{marker.label}</h2>
         </div>
     );
 };

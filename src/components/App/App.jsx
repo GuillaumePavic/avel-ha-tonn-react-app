@@ -2,11 +2,10 @@ import {Route, Switch} from "react-router-dom";
 
 import './App.css';
 import Header from '../Header/Header';
-import HomePage from '../Home/Home';
+import HomePage from '../HomePage/HomePage';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
-
 
 import React from 'react';
 

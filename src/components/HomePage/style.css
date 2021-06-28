@@ -1,0 +1,18 @@
+.home {
+    height: 100%;
+    position: relative;
+}
+
+.clic {
+    position: absolute;
+    z-index: 1000;
+    top: 10%;
+    right: 5%;
+
+    padding: 12px;
+
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 2px rgb(128, 125, 125);
+    border-radius: 5px;
+}
