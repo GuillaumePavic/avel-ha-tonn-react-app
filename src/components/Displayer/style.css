@@ -15,10 +15,64 @@
     z-index: 1000;
 }
 
-.displayer_tabs {
-    display: flex;
+.displayer-header {
+    height: 10%;
 }
 
-.displayer_tabs li {
-    margin-left: 8px;
+.displayer-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.displayer-img {
+    width: 24px;
+    margin-right: 12px;
+}
+
+.displayer-tabs {
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.displayer-tabs li {
+    font-size: 16px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #000000;
+}
+
+.displayer-section {
+    height: 90%;
+    margin-top: 12px;
+}
+
+.displayer-article {
+    height: 25%;
+}
+
+.displayer-article-header {
+    display: flex;
+    align-items: center;
+
+    height: 25%;
+}
+
+.displayer-section-title {
+    font-size: 24px;
+}
+
+.displayer-section-content {
+    height: 75%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.displayer-section-content div {
+    margin-left: 16px;
+    
 }

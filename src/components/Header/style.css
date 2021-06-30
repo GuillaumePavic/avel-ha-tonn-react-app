@@ -1,10 +1,10 @@
-header {
+.header-main {
     height: 55px;
     width: 100%;
     border: 1px solid black
 }
 
-header ul {
+.header-main ul {
     display: flex;
     justify-content: space-between;
 }
