@@ -3,7 +3,8 @@ import './style.css';
 
 const Displayer = ({ marker }) => {
 
-    const [data, setData] = useState(marker.data.hr0)
+    const [data, setData] = useState(marker.data.hr0);
+    const [activeTab, setActiveTab] = useState('hr0')
 
     
     useEffect(() => {
@@ -13,6 +14,7 @@ const Displayer = ({ marker }) => {
 
     const onTabClick = (hr) => {
         setData({...marker.data[hr]});
+        setActiveTab(hr);
     }
 
     return (
@@ -21,9 +23,9 @@ const Displayer = ({ marker }) => {
                 <h2 className="displayer-title">{marker.label}</h2>
 
                 <ul className="displayer-tabs">
-                    <li onClick={() => onTabClick('hr0')}>Hr0</li>
-                    <li onClick={() => onTabClick('hr3')}>Hr3</li>
-                    <li onClick={() => onTabClick('hr6')}>Hr6</li>
+                    <li className={activeTab === 'hr0' ? 'active-tab' : ''} onClick={() => onTabClick('hr0')}> {marker.data.hr0.time} </li>
+                    <li className={activeTab === 'hr3' ? 'active-tab' : ''} onClick={() => onTabClick('hr3')}> {marker.data.hr3.time} </li>
+                    <li className={activeTab === 'hr6' ? 'active-tab' : ''} onClick={() => onTabClick('hr6')}> {marker.data.hr6.time} </li>
                 </ul>
             </header>
 
@@ -44,6 +46,17 @@ const Displayer = ({ marker }) => {
 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
+                        <img src="/img/wind.png" alt="waves.png" className="displayer-img" />
+                        <h3 className="displayer-section-title">Vent</h3>
+                    </header>
+                    <div className="displayer-section-content">
+                    <div>Orientation : {data.windDirection} ° </div>
+                    <div>Vitesse : {data.windSpeed} m/s </div>
+                    </div>
+                </article>
+
+                <article className="displayer-article">
+                    <header className="displayer-article-header">
                         <img src="/img/waves.png" alt="waves.png" className="displayer-img" />
                         <h3 className="displayer-section-title">Vagues</h3>
                     </header>
@@ -56,23 +69,12 @@ const Displayer = ({ marker }) => {
 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
-                        <img src="/img/wind.png" alt="waves.png" className="displayer-img" />
-                        <h3 className="displayer-section-title">Vent</h3>
-                    </header>
-                    <div className="displayer-section-content">
-                    <div>Orientation : {data.windDirection} ° </div>
-                    <div>Vitesse : {data.windSpeed} m/s </div>
-                    </div>
-                </article>
-                
-                <article className="displayer-article">
-                    <header className="displayer-article-header">
                     <img src="/img/tips.png" alt="waves.png" className="displayer-img" />
                     <h3 className="displayer-section-title">Conseils</h3>
                     </header>
                     <div className="displayer-section-content">
                     {data.suggestions.map(suggestion => (
-                        <div>{suggestion}</div>
+                        <div key={suggestion.id} >{suggestion.text}</div>
                     ))}
                     </div>
                 </article>

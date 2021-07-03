@@ -37,10 +37,20 @@
 }
 
 .displayer-tabs li {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
 
     cursor: pointer;
+}
 
+.active-tab {
+    background-color: #00daed;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.clicked {
     border-bottom: 1px solid #000000;
 }
 
@@ -73,6 +83,6 @@
 }
 
 .displayer-section-content div {
-    margin-left: 16px;
+    margin-left: 24px;
     
 }

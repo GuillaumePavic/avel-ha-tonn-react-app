@@ -33,7 +33,7 @@ const HomePage = () => {
                     "airTemperature": 17.69,
                     "cloudCover": 72.13,
                     "precipitation": 0.21,
-                    "time": "2021-06-29T18:00:00+00:00",
+                    "time": "15:00",
                     "waterTemperature": 18.01,
                     "waveDirection": 281.72,
                     "waveHeight": 0.87,
@@ -48,7 +48,7 @@ const HomePage = () => {
                     "airTemperature": 15.05,
                     "cloudCover": 56.89,
                     "precipitation": 0,
-                    "time": "2021-06-29T21:00:00+00:00",
+                    "time": "18:00",
                     "waterTemperature": 16.61,
                     "waveDirection": 281.61,
                     "waveHeight": 0.8,
@@ -63,7 +63,7 @@ const HomePage = () => {
                     "airTemperature": 13.89,
                     "cloudCover": 76.75,
                     "precipitation": 0,
-                    "time": "2021-06-30T00:00:00+00:00",
+                    "time": "20:00",
                     "waterTemperature": 16.26,
                     "waveDirection": 279.04,
                     "waveHeight": 0.7,
@@ -85,7 +85,8 @@ const HomePage = () => {
     return (
         <div className="home">
             <Map markersList={markersList} onMarkerClick={onMarkerClick} />
-            {markerData ? <Displayer marker={markerData} /> : <div className="clic"> Cliquez sur un des marqueurs</div>}            
+            {markerData ? <Displayer marker={markerData} /> 
+            :<div className="clic"> Cliquez sur un des marqueurs <img src="/img/marker.png" alt="marker.png" className="clic-img" /> </div>}            
         </div>
     );
 };
