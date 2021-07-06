@@ -1,4 +1,4 @@
-.home {
+.homePage {
     height: 100%;
     position: relative;
     max-width: 100%;
@@ -6,13 +6,44 @@
     overflow-x: hidden;
 }
 
-.clic-img {
-    width: 24px;
-    margin-left: 12px;
-    vertical-align: middle;
+.homePage-search {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+
+    color: #ffffff;
+    background-color: #00daed;
+    border: 2px solid #ffffff;
 }
 
-.clic {
+.homePage-search_active {
+    border: 2px solid black;
+}
+
+.homePage-search-aside {
+    position: absolute;
+    left: 100px;
+    bottom: 24px;
+    z-index: 1000;
+
+    background-color: #00daed;
+    color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+    height: 64px;
+    padding: 0 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homePage-click-info {
     position: absolute;
     z-index: 1000;
     top: 25px;
@@ -26,6 +57,16 @@
     box-shadow: 4px 4px 2px rgb(128, 125, 125);
 
     animation: clic_animation 0.5s forwards ease-out;
+}
+
+.click-img {
+    width: 24px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+.search-img {
+    width: 24px;
 }
 
 @keyframes clic_animation {

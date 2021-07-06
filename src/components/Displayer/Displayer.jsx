@@ -52,6 +52,12 @@ const Displayer = ({ marker }) => {
                     <div className="displayer-section-content">
                     <div>Orientation : {data.windDirection} ° </div>
                     <div>Vitesse : {data.windSpeed} m/s </div>
+                    <img 
+                        src="/img/arrow.png" 
+                        alt="arrow.png" 
+                        style={{transform: `rotate(${data.windDirection}deg)`}}
+                        className="displayer-article-arrow"
+                        />
                     </div>
                 </article>
 
@@ -64,6 +70,12 @@ const Displayer = ({ marker }) => {
                     <div>Vagues : {data.waveHeight} m </div>
                     <div>Période : {data.wavePeriod} secondes </div>
                     <div>Orientation : {data.waveDirection} ° </div>
+                    <img 
+                        src="/img/arrow.png" 
+                        alt="arrow.png" 
+                        style={{transform: `rotate(${data.waveDirection}deg)`}}
+                        className="displayer-article-arrow" 
+                    /> 
                     </div>
                 </article>
 

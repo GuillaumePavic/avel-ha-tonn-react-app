@@ -9,7 +9,19 @@ const HomePage = () => {
     
     const [markersList, setMarkers] = useState([]);
     const [markerData, setMarkerData] = useState(null);
+    const [activeSearch, setActiveSearch] = useState(false);
 
+    const onSearchClick = () => {
+        setActiveSearch(!activeSearch);
+        if(activeSearch === false) return;
+        //change cursor
+    }
+
+    const onMapClick = async (latlng) => {
+        console.log(latlng)
+        const data = await http.getSearchData(latlng);
+        setMarkerData(data);
+    }
 
     //1.Fetch markers
     useEffect(() => {
@@ -82,11 +94,23 @@ const HomePage = () => {
        ;
     }
 
+    
+
     return (
-        <div className="home">
-            <Map markersList={markersList} onMarkerClick={onMarkerClick} />
+        <div className="homePage" >
+            <Map markersList={markersList} onMarkerClick={onMarkerClick} activeSearch={activeSearch} onMapClick={onMapClick} />
+
             {markerData ? <Displayer marker={markerData} /> 
-            :<div className="clic"> Cliquez sur un des marqueurs <img src="/img/marker.png" alt="marker.png" className="clic-img" /> </div>}            
+            : <div className="homePage-click-info"> Cliquez sur un des marqueurs <img src="/img/marker.png" alt="marker.png" className="click-img" /> </div>
+            }
+
+            <button className={activeSearch ? "homePage-search homePage-search_active" : "homePage-search"} onClick={onSearchClick} >
+                <img src="/img/marker.png" alt="marker.png" className="search-img"/>
+            </button>
+            {activeSearch ? 
+            <aside className="homePage-search-aside">
+                <p>Cliquez à un endroit du littoral pour en connaître les conditions  </p>  
+            </aside> : null }          
         </div>
     );
 };

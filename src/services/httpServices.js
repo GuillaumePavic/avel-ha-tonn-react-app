@@ -13,9 +13,17 @@ const http = {
     },
 
     getMarkerData: async (markerId) => {
-        console.log(markerId)
         try {
             const response = await axios.get(`http://localhost:5000/api/marker/${markerId}`);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    getSearchData: async (latlng) => {
+        try {
+            const response = await axios.post('http://localhost:5000/api/pointer', latlng);
             return response.data;
         } catch (error) {
             console.log(error);
