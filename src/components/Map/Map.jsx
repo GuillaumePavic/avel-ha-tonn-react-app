@@ -4,19 +4,18 @@ import './style.css';
 import Search from '../Search/Search';
 
 const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
-console.log(activeSearch);
     return (
         <div className="map_container leaflet-grab-active" >
             <MapContainer 
               center={[47.998757, -3.398641]} 
-              zoom={9} scrollWheelZoom={true} 
+              zoom={8} scrollWheelZoom={true} 
               doubleClickZoom={true}
             >
 
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
+            />
 
               {markersList.map(marker => (
                   <Marker 

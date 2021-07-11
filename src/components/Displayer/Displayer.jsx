@@ -36,11 +36,10 @@ const Displayer = ({ marker }) => {
                         <img src="/img/sun.png" alt="sun.png" className="displayer-img" />
                         <h3 className="displayer-section-title"> Méteo </h3>
                     </header>
-                    <div className="displayer-section-content">
-                    <div>T° : {data.airTemperature} °C </div>
-                    <div>Couverture nuageuse : {data.cloudCover} % </div>
-                    <div>Précipitations : {data.precipitation} kg/m² </div>
-                    <div>T° de l'eau : {data.waterTemperature} °C </div>
+                    <div className="displayer-article-content">
+                        <div className="displayer-article-card"> <p>T° air</p> <p>{data.airTemperature} °C</p> </div>
+                        <div className="displayer-article-card"> <p>Précipitations</p> <p>{data.precipitation} kg/m²</p> </div>
+                        <div className="displayer-article-card"> <p>T° eau</p> <p>{data.waterTemperature} °C</p> </div>
                     </div>
                 </article>
 
@@ -49,14 +48,16 @@ const Displayer = ({ marker }) => {
                         <img src="/img/wind.png" alt="waves.png" className="displayer-img" />
                         <h3 className="displayer-section-title">Vent</h3>
                     </header>
-                    <div className="displayer-section-content">
-                    <div>Vitesse : {data.windSpeed} m/s </div>
-                    <img 
-                        src="/img/arrow.png" 
-                        alt="arrow.png" 
-                        style={{transform: `rotate(${data.windDirection}deg)`}}
-                        className="displayer-article-arrow"
+                    <div className="displayer-article-content">
+                    <div className="displayer-article-card"> <p>Vitesse</p> <p>{data.windSpeed} m/s</p> </div>
+                    <div className="displayer-article-card">  
+                        <img 
+                            src="/img/arrow.png" 
+                            alt="arrow.png" 
+                            style={{transform: `rotate(${data.windDirection}deg)`}}
+                            className="displayer-article-arrow"
                         />
+                    </div>
                     </div>
                 </article>
 
@@ -65,15 +66,17 @@ const Displayer = ({ marker }) => {
                         <img src="/img/waves.png" alt="waves.png" className="displayer-img" />
                         <h3 className="displayer-section-title">Vagues</h3>
                     </header>
-                    <div className="displayer-section-content">
-                    <div>Vagues : {data.waveHeight} m </div>
-                    <div>Période : {data.wavePeriod} secondes </div>
+                    <div className="displayer-article-content">
+                    <div className="displayer-article-card"> <p>Hauteur</p> <p>{data.waveHeight} m </p> </div>
+                    <div className="displayer-article-card"> <p>Période</p> <p>{data.wavePeriod} secondes</p> </div>
+                    <div className="displayer-article-card">  
                     <img 
                         src="/img/arrow.png" 
                         alt="arrow.png" 
                         style={{transform: `rotate(${data.waveDirection}deg)`}}
                         className="displayer-article-arrow" 
                     /> 
+                    </div>
                     </div>
                 </article>
                 
@@ -82,9 +85,9 @@ const Displayer = ({ marker }) => {
                     <img src="/img/tips.png" alt="waves.png" className="displayer-img" />
                     <h3 className="displayer-section-title">Conseils</h3>
                     </header>
-                    <div className="displayer-section-content">
+                    <div className="displayer-article-content displayer-suggestions">
                     {data.suggestions.map(suggestion => (
-                        <div key={suggestion.id} >{suggestion.text}</div>
+                        <div key={suggestion.id} className="displayer-article-card" >{suggestion.text}</div>
                     ))}
                     </div>
                 </article>

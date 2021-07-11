@@ -107,10 +107,11 @@ const HomePage = () => {
             <button className={activeSearch ? "homePage-search homePage-search_active" : "homePage-search"} onClick={onSearchClick} >
                 <img src="/img/marker.png" alt="marker.png" className="search-img"/>
             </button>
-            {activeSearch ? 
-            <aside className="homePage-search-aside">
-                <p>Cliquez à un endroit du littoral pour en connaître les conditions  </p>  
-            </aside> : null }          
+            {activeSearch && 
+                <aside className="homePage-search-aside">
+                    <p>Cliquez à un endroit du littoral pour en connaître les conditions</p>  
+                </aside>
+            }          
         </div>
     );
 };
