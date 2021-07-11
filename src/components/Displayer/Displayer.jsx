@@ -37,10 +37,10 @@ const Displayer = ({ marker }) => {
                         <h3 className="displayer-section-title"> Méteo </h3>
                     </header>
                     <div className="displayer-section-content">
-                    <div>Température : {data.airTemperature} °C </div>
+                    <div>T° : {data.airTemperature} °C </div>
                     <div>Couverture nuageuse : {data.cloudCover} % </div>
                     <div>Précipitations : {data.precipitation} kg/m² </div>
-                    <div>Température de l'eau : {data.waterTemperature} °C </div>
+                    <div>T° de l'eau : {data.waterTemperature} °C </div>
                     </div>
                 </article>
 
@@ -50,7 +50,6 @@ const Displayer = ({ marker }) => {
                         <h3 className="displayer-section-title">Vent</h3>
                     </header>
                     <div className="displayer-section-content">
-                    <div>Orientation : {data.windDirection} ° </div>
                     <div>Vitesse : {data.windSpeed} m/s </div>
                     <img 
                         src="/img/arrow.png" 
@@ -69,7 +68,6 @@ const Displayer = ({ marker }) => {
                     <div className="displayer-section-content">
                     <div>Vagues : {data.waveHeight} m </div>
                     <div>Période : {data.wavePeriod} secondes </div>
-                    <div>Orientation : {data.waveDirection} ° </div>
                     <img 
                         src="/img/arrow.png" 
                         alt="arrow.png" 
@@ -78,7 +76,7 @@ const Displayer = ({ marker }) => {
                     /> 
                     </div>
                 </article>
-
+                
                 <article className="displayer-article">
                     <header className="displayer-article-header">
                     <img src="/img/tips.png" alt="waves.png" className="displayer-img" />
@@ -90,6 +88,7 @@ const Displayer = ({ marker }) => {
                     ))}
                     </div>
                 </article>
+                
             </section>
         </div>
     );
