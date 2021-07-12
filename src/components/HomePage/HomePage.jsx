@@ -1,5 +1,5 @@
-import Map from '../Map/Map';
-import Displayer from '../Displayer/Displayer';
+import Map from './Map/Map';
+import Displayer from './DataDisplayer/Displayer';
 import React, {useState, useEffect} from 'react';
 import './style.css';
 
