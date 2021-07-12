@@ -5,11 +5,12 @@ import Search from '../Search/Search';
 
 const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
   //47.998757, -3.398641
+  //48.014312, -3.700443 -3.710785  47.863338580012886, -3.704480263256041
     return (
         <div className="map_container leaflet-grab-active" >
             <MapContainer 
-              center={[48.157495, -3.019908 ]} 
-              zoom={8} 
+              center={[47.863338, -3.704480]} 
+              zoom={9} 
               scrollWheelZoom={true} 
               doubleClickZoom={true}
             >
