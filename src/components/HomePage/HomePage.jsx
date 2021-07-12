@@ -23,6 +23,10 @@ const HomePage = () => {
         setMarkerData(data);
     }
 
+    const onCloseButtonClick = () => {
+        setMarkerData(null);
+    }
+
     //1.Fetch markers
     useEffect(() => {
         async function fetchMarkers(){
@@ -39,15 +43,13 @@ const HomePage = () => {
         setMarkerData(data);
     }
 
-    const onCloseButtonClick = () => {
-        setMarkerData(null);
-    }
     
     return (
         <div className="homePage" >
             <Map markersList={markersList} onMarkerClick={onMarkerClick} activeSearch={activeSearch} onMapClick={onMapClick} />
 
-            {markerData ? <Displayer marker={markerData} onCloseButtonClick={onCloseButtonClick} /> 
+            {markerData 
+            ? <Displayer marker={markerData} onCloseButtonClick={onCloseButtonClick} /> 
             : <div className="homePage-click-info"> Cliquez sur un des marqueurs <img src="/img/marker.png" alt="marker.png" className="click-img" /> </div>
             }
 
