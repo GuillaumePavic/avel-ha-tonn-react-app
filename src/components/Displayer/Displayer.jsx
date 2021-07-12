@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-const Displayer = ({ marker }) => {
+const Displayer = ({ marker, onCloseButtonClick }) => {
 
     const [data, setData] = useState(marker.data.hr0);
     const [activeTab, setActiveTab] = useState('hr0')
@@ -19,8 +19,11 @@ const Displayer = ({ marker }) => {
 
     return (
         <div className="displayer">
+
+        <div className="displayer-close-button" onClick={onCloseButtonClick}> <img src="/img/close.png" alt="close.png" /> </div>
+
             <header className="displayer-header">
-                <h2 className="displayer-title">{marker.label}</h2>
+                <h2 className="displayer-title">{(marker.label) ? marker.label : `${marker.lat}, ${marker.lng}`}</h2>
 
                 <ul className="displayer-tabs">
                     <li className={activeTab === 'hr0' ? 'active-tab' : ''} onClick={() => onTabClick('hr0')}> {marker.data.hr0.time} </li>

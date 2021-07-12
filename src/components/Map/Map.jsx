@@ -4,11 +4,13 @@ import './style.css';
 import Search from '../Search/Search';
 
 const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
+  //47.998757, -3.398641
     return (
         <div className="map_container leaflet-grab-active" >
             <MapContainer 
-              center={[47.998757, -3.398641]} 
-              zoom={8} scrollWheelZoom={true} 
+              center={[48.157495, -3.019908 ]} 
+              zoom={8} 
+              scrollWheelZoom={true} 
               doubleClickZoom={true}
             >
 
