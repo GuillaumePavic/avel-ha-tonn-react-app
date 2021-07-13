@@ -1,22 +1,22 @@
 .header-main {
-    height: 55px;
-    width: 100%;
-    border: 1px solid black;
+  height: 55px;
+  width: 100%;
+  border: 1px solid black;
 }
 
 .header-main ul {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 12px;
 }
 
 .header-img {
-    width: 24px;
-    margin: 12px;
-    vertical-align: middle;
+  width: 24px;
+  margin: 12px;
+  vertical-align: middle;
 }
