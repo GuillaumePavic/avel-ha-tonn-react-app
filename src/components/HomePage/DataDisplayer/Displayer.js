@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+import './style.scss';
 
 const Displayer = ({ marker, onCloseButtonClick }) => {
 
@@ -23,9 +23,9 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
         <div className="displayer-close-button" onClick={onCloseButtonClick}> <img src="/img/close.png" alt="close.png" /> </div>
 
             <header className="displayer-header">
-                <h2 className="displayer-title">{(marker.label) ? marker.label : `${marker.lat}, ${marker.lng}`}</h2>
+                <h2 className="displayer-header-title">{(marker.label) ? marker.label : `${marker.lat}, ${marker.lng}`}</h2>
 
-                <ul className="displayer-tabs">
+                <ul className="displayer-header-tabs">
                     <li className={activeTab === 'hr0' ? 'active-tab' : ''} onClick={() => onTabClick('hr0')}> {marker.data.hr0.time} </li>
                     <li className={activeTab === 'hr3' ? 'active-tab' : ''} onClick={() => onTabClick('hr3')}> {marker.data.hr3.time} </li>
                     <li className={activeTab === 'hr6' ? 'active-tab' : ''} onClick={() => onTabClick('hr6')}> {marker.data.hr6.time} </li>
@@ -36,8 +36,8 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
-                        <img src="/img/sun.png" alt="sun.png" className="displayer-img" />
-                        <h3 className="displayer-section-title"> Méteo </h3>
+                        <img src="/img/sun.png" alt="sun.png" className="displayer-article-img" />
+                        <h3 className="displayer-article-title"> Méteo </h3>
                     </header>
                     <div className="displayer-article-content">
                         <div className="displayer-article-card"> <p>T° air</p> <p>{data.airTemperature} °C</p> </div>
@@ -48,8 +48,8 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
-                        <img src="/img/wind.png" alt="waves.png" className="displayer-img" />
-                        <h3 className="displayer-section-title">Vent</h3>
+                        <img src="/img/wind.png" alt="waves.png" className="displayer-article-img" />
+                        <h3 className="displayer-article-title">Vent</h3>
                     </header>
                     <div className="displayer-article-content">
                     <div className="displayer-article-card"> <p>Vitesse</p> <p>{data.windSpeed} m/s</p> </div>
@@ -66,8 +66,8 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
-                        <img src="/img/waves.png" alt="waves.png" className="displayer-img" />
-                        <h3 className="displayer-section-title">Vagues</h3>
+                        <img src="/img/waves.png" alt="waves.png" className="displayer-article-img" />
+                        <h3 className="displayer-article-title">Vagues</h3>
                     </header>
                     <div className="displayer-article-content">
                     <div className="displayer-article-card"> <p>Hauteur</p> <p>{data.waveHeight} m </p> </div>
@@ -85,10 +85,10 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
                 
                 <article className="displayer-article">
                     <header className="displayer-article-header">
-                    <img src="/img/tips.png" alt="waves.png" className="displayer-img" />
-                    <h3 className="displayer-section-title">Conseils</h3>
+                    <img src="/img/tips.png" alt="waves.png" className="displayer-article-img" />
+                    <h3 className="displayer-article-title">Conseils</h3>
                     </header>
-                    <div className="displayer-article-content displayer-suggestions">
+                    <div className="displayer-article-content displayer-article-suggestions">
                     {data.suggestions.map(suggestion => (
                         <div key={suggestion.id} className="displayer-article-card" >{suggestion.text}</div>
                     ))}

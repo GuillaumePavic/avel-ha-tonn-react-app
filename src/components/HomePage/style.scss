@@ -1,0 +1,85 @@
+@use 'src/styles/vars' as v;
+@use 'src/styles/mixins' as m;
+
+.homePage {
+  height: 100%;
+  position: relative;
+  max-width: 100%;
+
+  overflow-x: hidden;
+
+  &-search {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+
+    color: #ffffff;
+    background-color: v.$clear-blue;
+    border: 2px solid v.$white;
+    @include m.box-shadow;
+
+    &_active {
+      border: 2px solid v.$black;
+    }
+
+    &-aside {
+      position: absolute;
+      left: 100px;
+      bottom: 24px;
+      z-index: 1000;
+
+      background-color: v.$white;
+      color: black;
+      border: 2px solid v.$clear-blue;
+      @include m.box-shadow;
+      border-radius: 4px;
+      height: 64px;
+      padding: 0 16px;
+
+      font-size: 0.8em;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-click-info {
+    position: absolute;
+    z-index: 1000;
+    top: 25px;
+    right: -200px;
+
+    padding: 18px;
+
+    color: #ffffff;
+    background-color: v.$clear-blue;
+    border: 2px solid v.$white;
+    @include m.box-shadow;
+
+    animation: clic_animation 0.5s forwards ease-out;
+  }
+
+  .click-img {
+    width: 24px;
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  .search-img {
+    width: 24px;
+  }
+}
+@keyframes clic_animation {
+  0% {
+    right: -100px;
+  }
+  100% {
+    right: 25px;
+  }
+}

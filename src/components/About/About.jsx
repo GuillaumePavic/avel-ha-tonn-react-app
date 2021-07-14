@@ -19,7 +19,7 @@ const About = () => {
         <strong>Node.js/Express</strong>, et renvoyées au front.
       </p>
       <p>
-        Le front quant à lui, est réalisé avec <strong>React</strong>.
+        Le front quant à lui est réalisé avec <strong>React</strong>.
       </p>
       <p>
         Retrouvez le code source sur{" "}

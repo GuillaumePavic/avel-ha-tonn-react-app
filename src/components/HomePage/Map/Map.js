@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import React from 'react';
-import './style.css';
+import './style.scss';
 import Search from '../Search/Search';
 
 const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
