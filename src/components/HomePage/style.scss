@@ -83,3 +83,37 @@
     right: 25px;
   }
 }
+
+@media (max-width: 1024px) {
+  .homePage-search {
+    top: 35%;
+    left: 8px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .homePage-search-aside {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    padding: 2px;
+    text-align: center;
+    height: 42px;
+    
+    
+  }
+
+  .homePage-click-info {
+    top: 65%;
+    left: 0;
+
+    width: 100%;
+
+    background-color: v.$white;
+    color: v.$black;
+
+    text-align: center;
+  }
+}

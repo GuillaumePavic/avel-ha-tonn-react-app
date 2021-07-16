@@ -154,3 +154,24 @@
     }
   }
 }
+
+/*---1024px---*/
+@media (max-width: 1024px) {
+  .displayer {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+  }
+
+  .displayer-close-button {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .displayer {
+    height: 600px;
+  }
+}

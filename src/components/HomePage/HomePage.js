@@ -13,7 +13,6 @@ const HomePage = () => {
   const onSearchClick = () => {
     setActiveSearch(!activeSearch);
     if (activeSearch === false) return;
-    //change cursor
   };
 
   const onMapClick = async (latlng) => {
@@ -51,23 +50,6 @@ const HomePage = () => {
         onMapClick={onMapClick}
       />
 
-      {markerData ? (
-        <Displayer
-          marker={markerData}
-          onCloseButtonClick={onCloseButtonClick}
-        />
-      ) : (
-        <div className="homePage-click-info">
-          {" "}
-          Cliquez sur un des marqueurs{" "}
-          <img
-            src="/img/marker.png"
-            alt="marker.png"
-            className="click-img"
-          />{" "}
-        </div>
-      )}
-
       <button
         className={
           activeSearch
@@ -84,6 +66,23 @@ const HomePage = () => {
             Cliquez à un endroit du littoral pour en connaître les conditions
           </p>
         </aside>
+      )}
+
+      {markerData ? (
+        <Displayer
+          marker={markerData}
+          onCloseButtonClick={onCloseButtonClick}
+        />
+      ) : (
+        <div className="homePage-click-info">
+          {" "}
+          Cliquez sur un des marqueurs{" "}
+          <img
+            src="/img/marker.png"
+            alt="marker.png"
+            className="click-img"
+          />{" "}
+        </div>
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
 
 const About = () => {
   return (
@@ -19,7 +19,7 @@ const About = () => {
         <strong>Node.js/Express</strong>, et renvoyées au front.
       </p>
       <p>
-        Le front quant à lui est réalisé avec <strong>React</strong>.
+        Le front quant à lui est réalisé avec <strong>React</strong> et <strong>Sass</strong>.
       </p>
       <p>
         Retrouvez le code source sur{" "}
