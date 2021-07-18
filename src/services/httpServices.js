@@ -23,7 +23,7 @@ const http = {
 
     getSearchData: async (latlng) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/pointer', latlng);
+            const response = await axios.post('http://localhost:5000/api/search', latlng);
             return response.data;
         } catch (error) {
             console.log(error);
