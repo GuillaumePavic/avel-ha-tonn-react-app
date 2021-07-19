@@ -1,7 +1,7 @@
 .header-main {
   height: 55px;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid ;
 }
 
 .header-main ul {
@@ -19,4 +19,16 @@
   width: 24px;
   margin: 12px;
   vertical-align: middle;
+}
+
+@media (max-width: 432px) {
+  .header-main ul {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-img {
+    display: none;
+  }
 }

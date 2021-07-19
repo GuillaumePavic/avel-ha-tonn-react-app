@@ -1,18 +1,20 @@
-.notfound-container {
+@use 'src/styles/vars' as v;
+
+.contact-container {
   width: 70%;
   height: 100%;
   margin: auto;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   font-size: 24px;
   text-align: center;
 }
 
-.notfound-container strong {
+.contact-container a {
   font-weight: 700;
-  color: #64bde1;
+  color: v.$dark-blue;
 }

@@ -1,0 +1,13 @@
+.map_container {
+  height: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .map_container {
+    height: 50%;
+  }
+}
