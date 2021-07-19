@@ -12,7 +12,7 @@ const About = () => {
         voile, plage ou encore rester chez soi.
       </p>
       <p>
-        Les données météo sont fournies par l'<strong>API Storm Glass</strong>,
+        Les données météo sont fournies par l'<a href="https://stormglass.io/" target="_blank" rel="noopener noreferrer"><strong>API Storm Glass</strong></a>,
         qui permet d'obtenir les conditions météo à n'importes quelles
         coordonnées du globe. Ces données sont ensuite formatées et les moyennes
         calculées sur l'API de l'application, elle-même réalisée avec{" "}
