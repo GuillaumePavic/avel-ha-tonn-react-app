@@ -1,7 +1,8 @@
-import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import React, { useState, useEffect } from "react";
 import "./style.scss";
+import PropTypes from 'prop-types';
 import Search from "../Search/Search";
+import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 
 const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
   const [screenWidth] = useState(window.innerWidth);
@@ -40,3 +41,10 @@ const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
 };
 
 export default Map;
+
+Map.propTypes = {
+  markersList: PropTypes.array.isRequired,
+  onMarkerClick: PropTypes.func.isRequired,
+  activeSearch: PropTypes.bool.isRequired,
+  onMapClick: PropTypes.func.isRequired
+}

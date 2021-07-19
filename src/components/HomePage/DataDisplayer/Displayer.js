@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.scss';
+import PropTypes from 'prop-types';
 
 const Displayer = ({ marker, onCloseButtonClick }) => {
 
@@ -101,3 +102,8 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
 };
 
 export default Displayer;
+
+Displayer.propTypes = {
+    marker: PropTypes.object.isRequired,
+    onCloseButtonClick: PropTypes.func.isRequired
+}
