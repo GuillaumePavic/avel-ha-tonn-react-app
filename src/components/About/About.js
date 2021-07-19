@@ -44,7 +44,7 @@ const About = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <strong>front</strong>
+          <strong>client</strong>
         </a>{" "}
         sur Github. .
       </p>
