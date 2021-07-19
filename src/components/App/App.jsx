@@ -1,4 +1,6 @@
 import { Route, Switch } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import "./App.scss";
 import Header from "../Header/Header";
@@ -14,6 +16,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+        <ToastContainer />
       <main>
         <Switch>
           <Route exact path="/">
