@@ -13,6 +13,10 @@
   font-size: 24px;
   text-align: center;
 
+  & p {
+    line-height: 2rem;
+  }
+
   & strong {
     font-weight: 700;
     color: v.$dark-blue;

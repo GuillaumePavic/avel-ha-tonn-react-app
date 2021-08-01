@@ -23,10 +23,10 @@ const About = () => {
         , qui permet d'obtenir les conditions météo à n'importes quelles
         coordonnées du globe. Ces données sont ensuite formatées et les moyennes
         calculées sur l'API de l'application, elle-même réalisée avec{" "}
-        <strong>Node.js/Express</strong>, et renvoyées au front.
+        <strong>Node.js/Express</strong>, et renvoyées au client.
       </p>
       <p>
-        Le front quant à lui est réalisé avec <strong>React</strong> et{" "}
+        La partie client quant à elle est réalisée avec <strong>React</strong> et{" "}
         <strong>Sass</strong>.
       </p>
       <p>
@@ -46,7 +46,7 @@ const About = () => {
         >
           <strong>client</strong>
         </a>{" "}
-        sur Github. .
+        sur Github.
       </p>
     </div>
   );
