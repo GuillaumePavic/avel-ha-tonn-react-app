@@ -15,7 +15,7 @@ const http = {
 
     getMarkers: async () => {
         try {
-           const response = await axios.get('http://localhost:5000/api/markers');
+           const response = await axios.get('https://havelhatonn-api.herokuapp.com/markers');
            return response.data;
         } catch (error) {
             console.log(error);
@@ -25,7 +25,7 @@ const http = {
 
     getMarkerData: async (markerId) => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/marker/${markerId}`);
+            const response = await axios.get(`https://havelhatonn-api.herokuapp.com/marker/${markerId}`);
             return response.data;
         } catch (error) {
             console.log(error);
@@ -34,7 +34,7 @@ const http = {
 
     getSearchData: async (latlng) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/search', latlng);
+            const response = await axios.post('https://havelhatonn-api.herokuapp.com/search', latlng);
             return response.data;
         } catch (error) {
             console.log(error);
