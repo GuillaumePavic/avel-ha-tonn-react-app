@@ -2,6 +2,7 @@
   height: 55px;
   width: 100%;
   border: 1px solid ;
+  position: relative;
 }
 
 .header-main ul {
@@ -19,6 +20,31 @@
   width: 24px;
   margin: 12px;
   vertical-align: middle;
+}
+
+.connection-wrapper {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+}
+
+.connection-icon_active {
+  display: none;
+}
+
+.connection-login_hide {
+  display: none;
+}
+
+.connection-login-button {
+  background-color: inherit;
+}
+
+.connection-signup {
+  margin-left: 12px;
+  margin-top: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 @media (max-width: 432px) {

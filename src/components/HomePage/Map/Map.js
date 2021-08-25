@@ -22,11 +22,11 @@ const Map = ({ markersList, onMarkerClick, activeSearch, onMapClick }) => {
 
         {markersList.map((marker) => (
           <Marker
-            key={marker.id}
+            key={marker._id}
             position={[marker.lat, marker.lng]}
             eventHandlers={{
               click: () => {
-                onMarkerClick(marker.id);
+                onMarkerClick(marker._id);
               },
             }}
           >

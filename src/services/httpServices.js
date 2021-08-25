@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+const API_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://havelhatonn-api.herokuapp.com';
+
 axios.interceptors.response.use(null, error => {
     const expectedError = error.response && error.response.status >= 400 && error.response.status < 500;
 
@@ -15,7 +17,7 @@ const http = {
 
     getMarkers: async () => {
         try {
-           const response = await axios.get('https://havelhatonn-api.herokuapp.com/markers');
+           const response = await axios.get(`${API_URL}/markers`);
            return response.data;
         } catch (error) {
             console.log(error);
@@ -25,7 +27,7 @@ const http = {
 
     getMarkerData: async (markerId) => {
         try {
-            const response = await axios.get(`https://havelhatonn-api.herokuapp.com/marker/${markerId}`);
+            const response = await axios.get(`${API_URL}/marker/${markerId}`);
             return response.data;
         } catch (error) {
             console.log(error);
@@ -34,7 +36,16 @@ const http = {
 
     getSearchData: async (latlng) => {
         try {
-            const response = await axios.post('https://havelhatonn-api.herokuapp.com/search', latlng);
+            const response = await axios.post(`${API_URL}/search`, latlng);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    userLogin: async (userLogin) => {
+        try {
+            const response = await axios.post(`${API_URL}/login`, userLogin);
             return response.data;
         } catch (error) {
             console.log(error);
