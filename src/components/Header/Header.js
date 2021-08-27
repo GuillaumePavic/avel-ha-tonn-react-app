@@ -4,25 +4,30 @@ import React, { useState } from "react";
 import "./style.scss";
 
 const Header = () => {
-  const [loginIconisClicked, setLoginIconisClicked] = useState(false);
-  const [userMail, setUserMail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [loginIconIsClicked, setLoginIconIsClicked] = useState(false);
+  const [userLogedIn, setUserLogedIn] = useState(false);
+  const [name, setName] = useState("");
 
-  const onLoginIconClick = () => {
-    setLoginIconisClicked(true);
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLoginIconClick = () => {
+    setLoginIconIsClicked(true);
   };
 
-  const onMailChange = (e) => {
-    setUserMail(e.target.value);
+  const handleMailChange = (e) => {
+    setMail(e.target.value);
   };
 
-  const onPasswordChange = (e) => {
-    setUserPassword(e.target.value);
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await http.userLogin({ userMail, userPassword });
+    const data = await http.userLogin({ mail, password });
+    setName(data.name);
+    setUserLogedIn(true);
   };
 
   return (
@@ -38,28 +43,42 @@ const Header = () => {
       </ul>
 
       <div className="connection-wrapper">
-        <img
-          src="/img/user.png"
-          alt="user icon"
-          onClick={onLoginIconClick}
-          className={loginIconisClicked ? "connection-icon_active" : ""}
-        />
-        <div
-          className={
-            loginIconisClicked ? "connection-login" : "connection-login_hide"
-          }
-        >
-          <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="email" onChange={onMailChange} />
-            <input
-              type="password"
-              placeholder="mot de passe"
-              onChange={onPasswordChange}
+        {userLogedIn ? (
+          <Link to="/me"> {name} </Link>
+        ) : (
+          <div>
+            <img
+              src="/img/user.png"
+              alt="user icon"
+              onClick={handleLoginIconClick}
+              className={loginIconIsClicked ? "connection-icon_active" : ""}
             />
-            <button className="connection-login-button">Envoyer</button>
-          </form>
-          <Link to="/signup" className="connection-signup">S'inscrire</Link>
-        </div>
+            <div
+              className={
+                loginIconIsClicked
+                  ? "connection-login"
+                  : "connection-login_hide"
+              }
+            >
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  placeholder="email"
+                  onChange={handleMailChange}
+                />
+                <input
+                  type="password"
+                  placeholder="mot de passe"
+                  onChange={handlePasswordChange}
+                />
+                <button className="connection-login-button">Envoyer</button>
+              </form>
+              <Link to="/signup" className="connection-signup">
+                S'inscrire
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

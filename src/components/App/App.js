@@ -8,6 +8,7 @@ import HomePage from "../HomePage/HomePage";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Signup from "../Signup/Signup";
+import UserPage from "../UserPage/UserPage";
 import NotFound from "../NotFound/NotFound";
 import Footer from "../Footer/Footer";
 
@@ -34,6 +35,10 @@ const App = () => {
 
           <Route exact path="/signup">
             <Signup />
+          </Route>
+
+          <Route exact path="/me">
+            <UserPage />
           </Route>
 
           <Route>

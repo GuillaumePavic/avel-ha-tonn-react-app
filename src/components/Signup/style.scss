@@ -19,6 +19,15 @@
     line-height: 3rem;
 }
 
+.signup-registered {
+    color: v.$dark-blue;
+    font-weight: 700;
+}
+
+.signup-registered_hide {
+    display: none;
+}
+
 .signup-form {
     display: flex;
     flex-direction: column;

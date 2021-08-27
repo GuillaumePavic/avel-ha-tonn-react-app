@@ -6,9 +6,15 @@ const API_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000'
 axios.interceptors.response.use(null, error => {
     const expectedError = error.response && error.response.status >= 400 && error.response.status < 500;
 
-    if(!expectedError) {
-        toast.error('Oops, il y a eu un souci !')
+    if(expectedError) {
+        toast.error(error.message);
+    } else {
+        toast.error('Oops, il y a eu un souci côté serveur !');
     }
+
+    /* if(!expectedError) {
+        toast.error('Oops, il y a eu un souci !')
+    } */
 
     return Promise.reject(error);
 })
@@ -27,7 +33,7 @@ const http = {
 
     getMarkerData: async (markerId) => {
         try {
-            const response = await axios.get(`${API_URL}/marker/${markerId}`);
+            const response = await axios.get(`${API_URL}/markers/${markerId}`);
             return response.data;
         } catch (error) {
             console.log(error);
@@ -45,7 +51,32 @@ const http = {
 
     userLogin: async (userLogin) => {
         try {
-            const response = await axios.post(`${API_URL}/login`, userLogin);
+            const response = await axios.post(`${API_URL}/auth`, userLogin);
+            localStorage.setItem('token', response.data.token);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+            return error.message;
+        }
+    },
+
+    userSignup: async (userSignup) => {
+        try {
+            const response = await axios.post(`${API_URL}/user`, userSignup);
+            return response.data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    getUser: async () => {
+        try {
+            const token = localStorage.getItem('token');
+            const response = await axios.get(`${API_URL}/user`, {
+                headers: {
+                    auth: token
+                }
+            });
             return response.data;
         } catch (error) {
             console.log(error);
