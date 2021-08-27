@@ -16,7 +16,6 @@ const HomePage = () => {
   };
 
   const onMapClick = async (latlng) => {
-    console.log(latlng);
     const data = await http.getSearchData(latlng);
     setMarkerData(data);
   };

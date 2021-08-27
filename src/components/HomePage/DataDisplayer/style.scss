@@ -17,9 +17,33 @@
   top: 2%;
   z-index: 1000;
 
-  /*-------Close Button-------*/
+  /*-------Close And Save Button-------*/
   &:hover &-close-button {
     opacity: 100;
+  }
+
+  &:hover &-save-button {
+    opacity: 100;
+  }
+
+  &-save-button {
+    opacity: 0;
+
+    position: absolute;
+    top: 8px;
+    right: 42px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+  }
+
+  &-save-button img {
+    width: 16px 
+  }
+
+  &-save-button:hover {
+    transform: scale(1.2);
   }
 
   &-close-button {

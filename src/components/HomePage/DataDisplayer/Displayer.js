@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss";
 import PropTypes from "prop-types";
+import http from "../../../services/httpServices";
+import { toast } from "react-toastify";
 
 const Displayer = ({ marker, onCloseButtonClick }) => {
   const [data, setData] = useState(marker.data.hr0);
@@ -15,8 +17,31 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
     setActiveTab(hr);
   };
 
+  const onSaveClick = async (marker) => {
+    let newMarker = {
+      lat: marker.lat,
+      lng: marker.lng,
+    };
+
+    if (marker.label) {
+      newMarker = {
+        ...newMarker,
+        label: marker.label,
+      };
+    }
+
+    await http.saveMarker(newMarker);
+    toast.info('Marker sauvegardé !')
+  };
+
   return (
     <div className="displayer">
+      <div
+        className="displayer-save-button"
+        onClick={() => onSaveClick(marker)}
+      >
+        <img src="/img/save.png" alt="save.png" />
+      </div>
       <div className="displayer-close-button" onClick={onCloseButtonClick}>
         {" "}
         <img src="/img/close.png" alt="close.png" />{" "}

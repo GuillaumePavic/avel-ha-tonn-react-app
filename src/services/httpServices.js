@@ -81,6 +81,24 @@ const http = {
         } catch (error) {
             console.log(error);
         }
+    },
+
+    saveMarker: async (marker) => {
+        try {
+            const token = localStorage.getItem('token');
+
+            const headers = {
+                headers: {
+                    auth: token
+                }
+            };
+
+            const response = await axios.post(`${API_URL}/user/marker`, marker, headers);
+            
+            return response.data
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
