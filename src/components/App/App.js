@@ -10,6 +10,7 @@ import Contact from "../Contact/Contact";
 import Signup from "../Signup/Signup";
 import UserPage from "../UserPage/UserPage";
 import NotFound from "../NotFound/NotFound";
+import EmailConfirmed from "../EmailConfirmed/EmailConfirmed";
 import Footer from "../Footer/Footer";
 
 import React from "react";
@@ -39,6 +40,10 @@ const App = () => {
 
           <Route exact path="/me">
             <UserPage />
+          </Route>
+
+          <Route exact path="/emailConfirm">
+            <EmailConfirmed />
           </Route>
 
           <Route>

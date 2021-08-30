@@ -8,7 +8,7 @@ const Header = () => {
   const [userLogedIn, setUserLogedIn] = useState(false);
   const [name, setName] = useState("");
 
-  const [mail, setMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLoginIconClick = () => {
@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   const handleMailChange = (e) => {
-    setMail(e.target.value);
+    setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -25,10 +25,19 @@ const Header = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await http.userLogin({ mail, password });
-    setName(data.name);
-    setUserLogedIn(true);
+    const data = await http.userLogin({ email, password });
+
+    if(data) {
+      setName(data.name);
+      setUserLogedIn(true);
+    }
   };
+
+  const handleLogOut = async () => {
+    localStorage.removeItem('token');
+    setUserLogedIn(false);
+    setLoginIconIsClicked(false);
+  }
 
   return (
     <header className="header-main">
@@ -44,7 +53,10 @@ const Header = () => {
 
       <div className="connection-wrapper">
         {userLogedIn ? (
-          <Link to="/me"> {name} </Link>
+          <div>
+            <Link to="/me" className="connection-name"> {name} </Link>
+            <button className="connection-logout" onClick={handleLogOut} >Se déconnecter</button>
+          </div>
         ) : (
           <div>
             <img

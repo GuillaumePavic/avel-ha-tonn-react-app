@@ -1,3 +1,5 @@
+@use 'src/styles/vars' as v;
+
 .header-main {
   height: 55px;
   width: 100%;
@@ -45,6 +47,20 @@
   margin-top: 2px;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.connection-name {
+  font-weight: 900;
+  color: v.$dark-blue;
+}
+
+.connection-logout {
+  display: block;
+  border: none;
+  background-color: inherit;
+  margin-left: 12px;
+  margin-top: 2px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 432px) {

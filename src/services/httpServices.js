@@ -7,14 +7,10 @@ axios.interceptors.response.use(null, error => {
     const expectedError = error.response && error.response.status >= 400 && error.response.status < 500;
 
     if(expectedError) {
-        toast.error(error.message);
+        toast.error(error.response.data.message);
     } else {
         toast.error('Oops, il y a eu un souci côté serveur !');
     }
-
-    /* if(!expectedError) {
-        toast.error('Oops, il y a eu un souci !')
-    } */
 
     return Promise.reject(error);
 })
@@ -56,7 +52,6 @@ const http = {
             return response.data;
         } catch (error) {
             console.log(error);
-            return error.message;
         }
     },
 
