@@ -42,7 +42,7 @@ const App = () => {
             <UserPage />
           </Route>
 
-          <Route exact path="/emailConfirm">
+          <Route exact path="/confirmEmail">
             <EmailConfirmed />
           </Route>
 

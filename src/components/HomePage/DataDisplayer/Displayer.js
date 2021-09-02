@@ -23,15 +23,10 @@ const Displayer = ({ marker, onCloseButtonClick }) => {
       lng: marker.lng,
     };
 
-    if (marker.label) {
-      newMarker = {
-        ...newMarker,
-        label: marker.label,
-      };
-    }
+    if (marker.label) newMarker.label = marker.label;
 
-    await http.saveMarker(newMarker);
-    toast.info('Marker sauvegardé !')
+    const response = await http.saveMarker(newMarker);
+    if(response) toast.info('Marker sauvegardé !');
   };
 
   return (

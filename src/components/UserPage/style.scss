@@ -1,3 +1,6 @@
+@use 'src/styles/vars' as v;
+@use 'src/styles/mixins' as m;
+
 .userPage-container {
   border: 1px solid black;
   width: 90%;
@@ -6,13 +9,37 @@
 
   display: flex;
 
+  & h2 {
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: v.$dark-blue;
+  }
+
   &-markers {
-    border: 1px solid black;
     width: 60%;
+    padding: 24px;
   }
 
   &-user {
-    border: 1px solid black;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+}
+
+.userPage-marker {
+  padding-left: 12px;
+
+  & h3 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: v.$clear-blue;
+  }
+
+  & p {
+    margin-bottom: 6px;
   }
 }

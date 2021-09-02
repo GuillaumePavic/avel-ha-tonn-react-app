@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://havelhatonn-api.herokuapp.com';
+const API_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://avelhatonn-api.herokuapp.com';
 
 axios.interceptors.response.use(null, error => {
     const expectedError = error.response && error.response.status >= 400 && error.response.status < 500;
@@ -91,6 +91,24 @@ const http = {
             const response = await axios.post(`${API_URL}/user/marker`, marker, headers);
             
             return response.data
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    deleteUser: async () => {
+        try {
+            const token = localStorage.getItem('token');
+
+            const headers = {
+                headers: {
+                    auth: token
+                }
+            };
+
+            const response = await axios.delete(`${API_URL}/user`, headers);
+            localStorage.removeItem('token');
+            return response.data;
         } catch (error) {
             console.log(error);
         }
