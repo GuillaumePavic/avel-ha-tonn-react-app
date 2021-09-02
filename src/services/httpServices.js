@@ -69,7 +69,7 @@ const http = {
             const token = localStorage.getItem('token');
             const response = await axios.get(`${API_URL}/user`, {
                 headers: {
-                    auth: token
+                    authorization: token
                 }
             });
             return response.data;
@@ -84,7 +84,7 @@ const http = {
 
             const headers = {
                 headers: {
-                    auth: token
+                    authorization: token
                 }
             };
 
@@ -102,7 +102,7 @@ const http = {
 
             const headers = {
                 headers: {
-                    auth: token
+                    authorization: token
                 }
             };
 
